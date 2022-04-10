@@ -106,9 +106,14 @@ body {
       box-sizing: border-box;
       color: #fff;
       text-shadow: 0px 0px 5px #000;
-      margin: 2.5vh 0;
+      padding: 2.5vh 0 0 0;
       font-size: 1.5rem;
       z-index: 2;
+
+      .title {
+        padding: 0 2.5vw;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
     }
   }
   .swiper-pagination-bullet {
