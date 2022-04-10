@@ -15,7 +15,7 @@ jobs:
       NUXT_ENV_TEST: ${{ secrets.ENV_TEST }}
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
 
     steps:
       - uses: actions/checkout@v2
