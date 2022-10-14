@@ -1,22 +1,28 @@
 <template>
   <div class="carousel-wrapper">
-    <div v-swiper:mySwiper="options">
-      <div class="swiper-wrapper">
-        <div v-for="i in 5" :key="i" class="swiper-slide">
-          <div class="swiper-bg">
-            <img
-              class="swiper-image"
-              :src="generateImage(i)"
-              data-swiper-parallax="-23%"
-            />
-          </div>
-          <div class="swiper-overlay">
-            <div></div>
-            <!-- Each slide has parallax title -->
-            <div class="title" data-swiper-parallax="-100">
-              1/200 F2.3" ISO 200
+    <div v-swiper:VerticalSwiper="verticalOptions">
+      <div class="swiper-slide">test</div>
+      <div class="swiper-slide">
+        <div v-swiper:MySwiper="options">
+          <div class="swiper-wrapper">
+            <div v-for="i in 5" :key="i" class="swiper-slide">
+              <div class="swiper-bg">
+                <img
+                  class="swiper-image"
+                  :src="generateImage(i)"
+                  data-swiper-parallax="-23%"
+                />
+              </div>
+              <div class="swiper-overlay">
+                <div></div>
+                <!-- Each slide has parallax title -->
+                <div class="title" data-swiper-parallax="-100">
+                  1/200 F2.3" ISO 200
+                </div>
+              </div>
             </div>
           </div>
+          <div class="swiper-pagination swiper-pagination-bullets"></div>
         </div>
       </div>
       <div class="swiper-pagination swiper-pagination-bullets"></div>
@@ -31,6 +37,14 @@ export default {
     return {
       options: {
         parallax: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      verticalOptions: {
+        parallax: true,
+        direction: 'vertical',
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
